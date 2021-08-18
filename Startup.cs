@@ -25,6 +25,7 @@ namespace projeto_jobs_net_mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Program.ApiHost = Configuration.GetConnectionString("ApiHost");
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DbContexto>(options => options.UseSqlServer(connectionString));
             services.AddControllersWithViews();

@@ -11,6 +11,7 @@ namespace projeto_jobs_net_mvc
 {
     public class Program
     {
+        public static string ApiHost; 
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

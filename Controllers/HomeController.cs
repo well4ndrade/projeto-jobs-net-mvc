@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using projeto_jobs_net_mvc.Models;
+using projeto_jobs_net_mvc.Servicos;
 
 namespace projeto_jobs_net_mvc.Controllers
 {
@@ -18,8 +19,9 @@ namespace projeto_jobs_net_mvc.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewBag.Usuarios = await JobsApiService.GetUsuarios();
             return View();
         }
 
