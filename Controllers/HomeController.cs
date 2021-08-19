@@ -19,11 +19,32 @@ namespace projeto_jobs_net_mvc.Controllers
             _logger = logger;
         }
 
+        // INDEX PARA VAGAS
+
         public async Task<IActionResult> Index()
         {
-            ViewBag.Usuarios = await UsuarioApiService.GetUsuarios();
+            ViewBag.Vagas = await VagaApiService.GetVagas();
             return View();
+            
         }
+
+        // INDEX PARA USUÁRIOS
+
+        // public async Task<IActionResult> Index()
+        // {
+        //     ViewBag.Usuarios = await UsuarioApiService.GetUsuarios();
+        //     return View();
+            
+        // }
+
+        // INDEX PARA ENDEREÇOS
+
+        // public async Task<IActionResult> Index()
+        // {
+        //     ViewBag.Enderecos = await EnderecoApiService.GetEnderecos();
+        //     return View();
+            
+        // }
 
         public IActionResult Privacy()
         {

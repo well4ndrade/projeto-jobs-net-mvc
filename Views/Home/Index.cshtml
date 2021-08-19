@@ -6,7 +6,33 @@
     <h1 class="display-4">Bem vindos candidatos</h1>
     <p>Clique <a href="/usuarios">aqui</a> para fazer o seu cadastro.</p>
 </div>
+
 <table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                descricao
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vaga in (List<Vaga>)ViewBag.Vagas) {
+        <tr>
+            <td>
+                @vaga.Nome
+            </td>
+            <td>
+                @vaga.descricao
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@* <table class="table">
     <thead>
         <tr>
             <th>
@@ -96,4 +122,60 @@
         </tr>
 }
     </tbody>
-</table>
+</table> *@
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cep
+            </th>
+            <th>
+                Logradouro
+            </th>
+            <th>
+                Numero
+            </th>
+            <th>
+                Bairro
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Pais
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var endereco in (List<Endereco>)ViewBag.Enderecos) {
+        <tr>
+            <td>
+                @endereco.Cep
+            </td>
+            <td>
+                @endereco.Logradouro
+            </td>
+            <td>
+                @endereco.Numero
+            </td>
+            <td>
+                @endereco.Bairro
+            </td>
+            <td>
+                @endereco.Cidade
+            </td>
+            <td>
+                @endereco.Estado
+            </td>
+            <td>
+                @endereco.Pais
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
