@@ -1,181 +1,100 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/jpeg" href="images/icons/letra-j.jpeg"> 
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						JOBSNET
+					</span>
+					<span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
 
-<div class="text-center">
-    <h1 class="display-4">Bem vindos candidatos</h1>
-    <p>Clique <a href="/usuarios">aqui</a> para fazer o seu cadastro.</p>
-</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="CPF">
+						<span class="focus-input100" data-placeholder="CPF"></span>
+					</div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Nome
-            </th>
-            <th>
-                descricao
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var vaga in (List<Vaga>)ViewBag.Vagas) {
-        <tr>
-            <td>
-                @vaga.Nome
-            </td>
-            <td>
-                @vaga.descricao
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-@* <table class="table">
-    <thead>
-        <tr>
-            <th>
-                Nome
-            </th>
-            <th>
-                Cpf
-            </th>
-            <th>
-                Rg
-            </th>
-            <th>
-                Genero
-            </th>
-            <th>
-                Nascimento
-            </th>
-            <th>
-                Telefone
-            </th>
-            <th>
-                Telefone2
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Profissao
-            </th>
-            <th>
-                EstadoCivil
-            </th>
-            <th>
-                PossuiVeiculo
-            </th>
-            <th>
-                PossuiHabilitacao
-            </th>
-            <th>
-                Endereco
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var usuario in (List<Usuario>)ViewBag.Usuarios) {
-        <tr>
-            <td>
-                @usuario.Nome
-            </td>
-            <td>
-                @usuario.Cpf
-            </td>
-            <td>
-                @usuario.Rg
-            </td>
-            <td>
-                @usuario.Genero
-            </td>
-            <td>
-                @usuario.Nascimento
-            </td>
-            <td>
-                @usuario.Telefone
-            </td>
-            <td>
-                @usuario.Telefone2
-            </td>
-            <td>
-                @usuario.Email
-            </td>
-            <td>
-                @usuario.Profissao
-            </td>
-            <td>
-                @usuario.EstadoCivil
-            </td>
-            <td>
-                @usuario.PossuiVeiculo
-            </td>
-            <td>
-                @usuario.PossuiHabilitacao
-            </td>
-            <td>
-                @usuario.endereco_id
-            </td>
-        </tr>
-}
-    </tbody>
-</table> *@
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="senha"></span>
+					</div>
 
-@* <table class="table">
-    <thead>
-        <tr>
-            <th>
-                Cep
-            </th>
-            <th>
-                Logradouro
-            </th>
-            <th>
-                Numero
-            </th>
-            <th>
-                Bairro
-            </th>
-            <th>
-                Cidade
-            </th>
-            <th>
-                Estado
-            </th>
-            <th>
-                Pais
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var endereco in (List<Endereco>)ViewBag.Enderecos) {
-        <tr>
-            <td>
-                @endereco.Cep
-            </td>
-            <td>
-                @endereco.Logradouro
-            </td>
-            <td>
-                @endereco.Numero
-            </td>
-            <td>
-                @endereco.Bairro
-            </td>
-            <td>
-                @endereco.Cidade
-            </td>
-            <td>
-                @endereco.Estado
-            </td>
-            <td>
-                @endereco.Pais
-            </td>
-        </tr>
-}
-    </tbody>
-</table> *@
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Entrar
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Ainda não tem uma conta?
+						</span>
+
+						<a class="txt2" href="/usuarios">
+							CADASTRE-SE
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
