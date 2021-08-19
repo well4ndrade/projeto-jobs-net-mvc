@@ -18,6 +18,7 @@ namespace projeto_jobs_net_mvc.Servicos
             var resultado = response.Content.ReadAsStringAsync().Result;
             var vagas = JsonConvert.DeserializeObject<List<Vaga>>(resultado);
             return vagas;
+            
         }
 
         return new List<Vaga>();
